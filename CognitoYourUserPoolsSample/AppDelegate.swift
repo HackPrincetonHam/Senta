@@ -32,6 +32,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        //For identity pool
+        let credentialProvider = AWSCognitoCredentialsProvider(regionType: .USEast1, identityPoolId: "us-east-1:d87c3dc1-2a2a-4b03-b4df-11a5a6a51278")
+        let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialProvider)
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
+        // Override point for customization after application launch.
+        
         // Warn user if configuration not updated
         if (CognitoIdentityUserPoolId == "YOUR_USER_POOL_ID") {
             let alertController = UIAlertController(title: "Invalid Configuration",

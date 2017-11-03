@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0D5A8E5387CC8FA610CFB75B /* Pods_CognitoYourUserPoolsSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8F26771F0FF8105FC402DD /* Pods_CognitoYourUserPoolsSample.framework */; };
+		0F8580661FAC06F70033352A /* MessengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8580651FAC06F70033352A /* MessengeTableViewCell.swift */; };
+		0F9DE9401FA9778D005F4F0F /* AWSS3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9DE93F1FA9778D005F4F0F /* AWSS3.swift */; };
+		0F9DE9421FA979C6005F4F0F /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9DE9411FA979C6005F4F0F /* DisplayViewController.swift */; };
 		17FC2F801E258FC500174015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC2F7F1E258FC500174015 /* AppDelegate.swift */; };
 		17FC2F851E258FC500174015 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17FC2F831E258FC500174015 /* Main.storyboard */; };
 		17FC2F871E258FC500174015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17FC2F861E258FC500174015 /* Assets.xcassets */; };
 		17FC2F8A1E258FC500174015 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17FC2F881E258FC500174015 /* LaunchScreen.storyboard */; };
-		17FC2F921E25908D00174015 /* CognitoLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 17FC2F911E25908D00174015 /* CognitoLogo.png */; };
 		17FC2F951E2590D800174015 /* MFAViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17FC2F941E2590D800174015 /* MFAViewController.xib */; };
 		17FC2F971E25928900174015 /* MFAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC2F961E25928900174015 /* MFAViewController.swift */; };
 		17FC2F991E25940900174015 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC2F981E25940900174015 /* SignInViewController.swift */; };
@@ -21,18 +23,18 @@
 		17FC2F9F1E259F3200174015 /* ConfirmSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC2F9E1E259F3200174015 /* ConfirmSignUpViewController.swift */; };
 		17FC2FA11E25A25900174015 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC2FA01E25A25900174015 /* ForgotPasswordViewController.swift */; };
 		17FC2FA31E25A5D000174015 /* ConfirmForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC2FA21E25A5D000174015 /* ConfirmForgotPasswordViewController.swift */; };
-		17FC2FA51E25A77600174015 /* UserDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC2FA41E25A77600174015 /* UserDetailTableViewController.swift */; };
-		17FC2FA71E25A9A200174015 /* DevicesDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC2FA61E25A9A200174015 /* DevicesDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F8580651FAC06F70033352A /* MessengeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengeTableViewCell.swift; sourceTree = "<group>"; };
+		0F9DE93F1FA9778D005F4F0F /* AWSS3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSS3.swift; sourceTree = "<group>"; };
+		0F9DE9411FA979C6005F4F0F /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 		17FC2F7C1E258FC500174015 /* CognitoYourUserPoolsSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CognitoYourUserPoolsSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FC2F7F1E258FC500174015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17FC2F841E258FC500174015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		17FC2F861E258FC500174015 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17FC2F891E258FC500174015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17FC2F8B1E258FC500174015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17FC2F911E25908D00174015 /* CognitoLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CognitoLogo.png; sourceTree = "<group>"; };
 		17FC2F941E2590D800174015 /* MFAViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MFAViewController.xib; sourceTree = "<group>"; };
 		17FC2F961E25928900174015 /* MFAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFAViewController.swift; sourceTree = "<group>"; };
 		17FC2F981E25940900174015 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -41,8 +43,6 @@
 		17FC2F9E1E259F3200174015 /* ConfirmSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmSignUpViewController.swift; sourceTree = "<group>"; };
 		17FC2FA01E25A25900174015 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		17FC2FA21E25A5D000174015 /* ConfirmForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmForgotPasswordViewController.swift; sourceTree = "<group>"; };
-		17FC2FA41E25A77600174015 /* UserDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailTableViewController.swift; sourceTree = "<group>"; };
-		17FC2FA61E25A9A200174015 /* DevicesDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesDetailTableViewController.swift; sourceTree = "<group>"; };
 		2D8C9B52DE415302BA7B152A /* Pods-CognitoYourUserPoolsSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CognitoYourUserPoolsSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CognitoYourUserPoolsSample/Pods-CognitoYourUserPoolsSample.release.xcconfig"; sourceTree = "<group>"; };
 		AB8F26771F0FF8105FC402DD /* Pods_CognitoYourUserPoolsSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CognitoYourUserPoolsSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBEB9BB4F88788184F7DD583 /* Pods-CognitoYourUserPoolsSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CognitoYourUserPoolsSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CognitoYourUserPoolsSample/Pods-CognitoYourUserPoolsSample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -60,6 +60,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F9DE9431FA9F99E005F4F0F /* Random */ = {
+			isa = PBXGroup;
+			children = (
+				17FC2F7F1E258FC500174015 /* AppDelegate.swift */,
+				17FC2F861E258FC500174015 /* Assets.xcassets */,
+				17FC2F881E258FC500174015 /* LaunchScreen.storyboard */,
+				17FC2F8B1E258FC500174015 /* Info.plist */,
+			);
+			name = Random;
+			sourceTree = "<group>";
+		};
 		17FC2F731E258FC500174015 = {
 			isa = PBXGroup;
 			children = (
@@ -81,13 +92,19 @@
 		17FC2F7E1E258FC500174015 /* CognitoYourUserPoolsSample */ = {
 			isa = PBXGroup;
 			children = (
-				17FC2F941E2590D800174015 /* MFAViewController.xib */,
-				17FC2F7F1E258FC500174015 /* AppDelegate.swift */,
 				17FC2F831E258FC500174015 /* Main.storyboard */,
-				17FC2F861E258FC500174015 /* Assets.xcassets */,
-				17FC2F881E258FC500174015 /* LaunchScreen.storyboard */,
-				17FC2F8B1E258FC500174015 /* Info.plist */,
-				17FC2F931E25909300174015 /* Supporting Files */,
+				0F9DE9411FA979C6005F4F0F /* DisplayViewController.swift */,
+				0F8580651FAC06F70033352A /* MessengeTableViewCell.swift */,
+				0F9DE9431FA9F99E005F4F0F /* Random */,
+				17FC2F931E25909300174015 /* HeavyLifting */,
+			);
+			path = CognitoYourUserPoolsSample;
+			sourceTree = "<group>";
+		};
+		17FC2F931E25909300174015 /* HeavyLifting */ = {
+			isa = PBXGroup;
+			children = (
+				17FC2F941E2590D800174015 /* MFAViewController.xib */,
 				17FC2F961E25928900174015 /* MFAViewController.swift */,
 				17FC2F981E25940900174015 /* SignInViewController.swift */,
 				17FC2F9A1E259E0500174015 /* Constants.swift */,
@@ -95,18 +112,9 @@
 				17FC2F9E1E259F3200174015 /* ConfirmSignUpViewController.swift */,
 				17FC2FA01E25A25900174015 /* ForgotPasswordViewController.swift */,
 				17FC2FA21E25A5D000174015 /* ConfirmForgotPasswordViewController.swift */,
-				17FC2FA41E25A77600174015 /* UserDetailTableViewController.swift */,
-				17FC2FA61E25A9A200174015 /* DevicesDetailTableViewController.swift */,
+				0F9DE93F1FA9778D005F4F0F /* AWSS3.swift */,
 			);
-			path = CognitoYourUserPoolsSample;
-			sourceTree = "<group>";
-		};
-		17FC2F931E25909300174015 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				17FC2F911E25908D00174015 /* CognitoLogo.png */,
-			);
-			name = "Supporting Files";
+			name = HeavyLifting;
 			sourceTree = "<group>";
 		};
 		2B50A37AC16AACF9427C4F0F /* Frameworks */ = {
@@ -190,7 +198,6 @@
 			files = (
 				17FC2F8A1E258FC500174015 /* LaunchScreen.storyboard in Resources */,
 				17FC2F871E258FC500174015 /* Assets.xcassets in Resources */,
-				17FC2F921E25908D00174015 /* CognitoLogo.png in Resources */,
 				17FC2F851E258FC500174015 /* Main.storyboard in Resources */,
 				17FC2F951E2590D800174015 /* MFAViewController.xib in Resources */,
 			);
@@ -299,16 +306,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F9DE9401FA9778D005F4F0F /* AWSS3.swift in Sources */,
 				17FC2FA31E25A5D000174015 /* ConfirmForgotPasswordViewController.swift in Sources */,
 				17FC2FA11E25A25900174015 /* ForgotPasswordViewController.swift in Sources */,
+				0F9DE9421FA979C6005F4F0F /* DisplayViewController.swift in Sources */,
 				17FC2F9D1E259E5D00174015 /* SignUpViewController.swift in Sources */,
 				17FC2F9F1E259F3200174015 /* ConfirmSignUpViewController.swift in Sources */,
+				0F8580661FAC06F70033352A /* MessengeTableViewCell.swift in Sources */,
 				17FC2F9B1E259E0500174015 /* Constants.swift in Sources */,
 				17FC2F991E25940900174015 /* SignInViewController.swift in Sources */,
 				17FC2F971E25928900174015 /* MFAViewController.swift in Sources */,
-				17FC2FA71E25A9A200174015 /* DevicesDetailTableViewController.swift in Sources */,
 				17FC2F801E258FC500174015 /* AppDelegate.swift in Sources */,
-				17FC2FA51E25A77600174015 /* UserDetailTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
