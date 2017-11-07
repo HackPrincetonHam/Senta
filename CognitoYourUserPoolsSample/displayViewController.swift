@@ -42,23 +42,28 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.title = nil
 }
     
-    @IBAction func BtnTapped(_ sender: UIButton) {
-        getFromS3(bucketName: "hamex-storage", fileKey: "horse.jpg") { (url) in
+    @IBAction func downloadBtnTapped(_ sender: UIButton) {
+        s3download(bucketName: "hamex-storage", fileKey: "horse.jpg") { (url) in
             if let url = url as? URL{
                 self.Image.image = UIImage(contentsOfFile: url.path)
             }
         }
         
-        read_DDB { (message) in
+        DDBRead { (message) in
             print(message._text!)
             print("this is read_DDB")
         }
         
-        query_DDB { (message) in
+        DDBQuery { (message) in
             print(message._text!)
             print("this is query_DDB")
         }
         
+    }
+    
+    @IBAction func uploadBtnTapped(_ sender: UIButton){
+        let url = URL(fileURLWithPath: <#T##String#>)
+        s3upload(url: url, bucketName: <#T##String#>, fileKey: <#T##String#>)
     }
     
     @IBAction func SendBtnTapped(_ sender: UIButton){
@@ -78,7 +83,7 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
         //DynamoDB
         
         
-        save_DDB(date: "11/4/17, 11:55 PM", text: textInput.text!, userId: "newUserID") {
+        DDBSave(date: "11/5/17, 2:59 AM", text: textInput.text!, userId: "userInfor[]!") {
             return
         }
     

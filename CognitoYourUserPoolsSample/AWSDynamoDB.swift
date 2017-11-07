@@ -9,13 +9,14 @@
 import Foundation
 import AWSCore
 import AWSDynamoDB
+import CoreML
 
-//to update, you need to have the same sort key. Even if you have different partition key, save method would update.
-func save_DDB(date: String, text: String, userId: String, completion: ()->Void){
+//to update, you need to have the same sort key and partition key.
+func DDBSave(date: String, text: String, userId: String, completion: ()->Void){
     
 let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
 let MessengeItem : Messenges = Messenges()
-MessengeItem._userId = UserInfor["sub"]!
+MessengeItem._userId = userId
 MessengeItem._date = date
 MessengeItem._text = text
     
@@ -27,11 +28,10 @@ MessengeItem._text = text
             print("SAVED!")
         }
     }
-    
 }
 
 
-func read_DDB( completion:@escaping (Messenges)->Void){
+func DDBRead( completion:@escaping (Messenges)->Void){
     let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
     
     dynamoDBObjectMapper.load(Messenges.self, hashKey: UserInfor["sub"]!, rangeKey: "11/4/17, 11:55 PM") { (item, Error) in
@@ -46,7 +46,7 @@ func read_DDB( completion:@escaping (Messenges)->Void){
 }
 
 //query is for viewing multiple items.
-func query_DDB(completion:@escaping (Messenges)->Void){
+func DDBQuery(completion:@escaping (Messenges)->Void){
     
     // 1) Configure the query
     
@@ -56,7 +56,7 @@ func query_DDB(completion:@escaping (Messenges)->Void){
     queryExpression.keyConditionExpression = "#otherID = :otherID"
     
     //to use filter expression, you need to user # and in combination with attributeValues
-    queryExpression.filterExpression = "#text = :text"
+    //queryExpression.filterExpression = "#text = :text"
     
     //the otherID needs to be the name of the attribute or the name of the with the addition of "#" in the front and in combination with expressionAttributeNames. add "#attributeionName" = "attributionName"
 //    queryExpression.expressionAttributeNames = [
@@ -64,13 +64,11 @@ func query_DDB(completion:@escaping (Messenges)->Void){
 //    ]
     
     queryExpression.expressionAttributeNames = [
-        "#text" : "text",
         "#otherID" : "otherID"
     ]
     
     queryExpression.expressionAttributeValues = [
         ":otherID" : "4c9c7d6e-9df1-4696-b4da-ecfd55cb1b52",
-        ":text" : "a"
     ]
     
     // 2) Make the query
@@ -86,6 +84,24 @@ func query_DDB(completion:@escaping (Messenges)->Void){
                 let newsItem = news as? Messenges
                 completion(newsItem!)
             }
+        }
+    }
+}
+
+func DDBDelete(date: String, text: String, userID: String, completion: @escaping ()->Void){
+    let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+    let message = Messenges()
+    
+    message?._date = date
+    message?._text = text
+    message?._userId = userID
+    
+    dynamoDBObjectMapper.remove(message!) { (error) in
+        if error != nil{
+            print("Amazon Dynamo DB Error: \(error!)")
+            return
+        }else{
+            completion()
         }
     }
 }
