@@ -41,6 +41,7 @@
                                 </state>
                                 <connections>
                                     <action selector="signInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UGV-Ac-v2h"/>
+                                    <segue destination="xUO-qK-z4L" kind="show" identifier="loggedIn" id="UyG-Ax-VLP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXe-qm-Syq">
@@ -101,7 +102,6 @@
                     <connections>
                         <outlet property="password" destination="jtg-5s-y9B" id="NG7-MV-RKZ"/>
                         <outlet property="username" destination="XdH-zS-hci" id="uBd-s7-BUU"/>
-                        <segue destination="xUO-qK-z4L" kind="show" identifier="loggedIn" id="SNk-ku-Nwv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -636,6 +636,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="SNk-ku-Nwv"/>
+        <segue reference="UyG-Ax-VLP"/>
     </inferredMetricsTieBreakers>
 </document>
