@@ -24,6 +24,7 @@ class DisplayViewController: UIViewController {
     @IBAction func SignOutTapped(_ sender: UIButton){
             self.user?.signOut()
             self.title = nil
+//        self.performSegue(withIdentifier: "loggedOut", sender: nil)
 }
     
     @IBAction func BtnTapped(_ sender: UIButton) {
@@ -46,7 +47,7 @@ class DisplayViewController: UIViewController {
     }
     
     @IBAction func SendBtnTapped(_ sender: UIButton){
-        performSegue(withIdentifier: "nextPage", sender: nil)
+        performSegue(withIdentifier: "roleSelectionSegue", sender: nil)
 //        let time = DateFormatter.localizedString(from: .init(), dateStyle: .short, timeStyle: .short)
         //S3
 //        if let textInput = textInput.text{

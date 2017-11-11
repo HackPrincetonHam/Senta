@@ -19,6 +19,7 @@ import Foundation
 import AWSCognitoIdentityProvider
 
 class SignUpViewController: UIViewController {
+
     
     var pool: AWSCognitoIdentityUserPool?
     var sentTo: String?
@@ -28,6 +29,8 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var email: UITextField!
+    
+    @IBOutlet weak var college: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +47,11 @@ class SignUpViewController: UIViewController {
             signUpConfirmationViewController.user = self.pool?.getUser(self.username.text!)
         }
     }
+
+    var collegeList = ["Hamilton College", "Princeton University"]
     
     @IBAction func signUp(_ sender: AnyObject) {
+
         
         guard let userNameValue = self.username.text, !userNameValue.isEmpty,
             let passwordValue = self.password.text, !passwordValue.isEmpty else {

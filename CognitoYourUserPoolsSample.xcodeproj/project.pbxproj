@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		0D5A8E5387CC8FA610CFB75B /* Pods_CognitoYourUserPoolsSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8F26771F0FF8105FC402DD /* Pods_CognitoYourUserPoolsSample.framework */; };
 		0F3833471FAD8A57007964B5 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3833461FAD8A57007964B5 /* UserData.swift */; };
+		0F5E23661FB7695F0035F9EA /* RoleRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E23651FB7695F0035F9EA /* RoleRegister.swift */; };
+		0F5E23681FB76E0C0035F9EA /* RolesFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E23671FB76E0C0035F9EA /* RolesFunction.swift */; };
 		0F8580661FAC06F70033352A /* MessengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8580651FAC06F70033352A /* MessengeTableViewCell.swift */; };
 		0F85806A1FAD0F000033352A /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F8580691FAD0F000033352A /* awsconfiguration.json */; };
 		0F85806C1FAD10690033352A /* AWSDynamoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F85806B1FAD10690033352A /* AWSDynamoDB.swift */; };
-		0F85806E1FAD14DC0033352A /* Messenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F85806D1FAD14DC0033352A /* Messenges.swift */; };
+		0F85806E1FAD14DC0033352A /* RolesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F85806D1FAD14DC0033352A /* RolesTable.swift */; };
 		0F9DE9401FA9778D005F4F0F /* AWSS3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9DE93F1FA9778D005F4F0F /* AWSS3.swift */; };
 		0F9DE9421FA979C6005F4F0F /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9DE9411FA979C6005F4F0F /* DisplayViewController.swift */; };
 		17FC2F801E258FC500174015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC2F7F1E258FC500174015 /* AppDelegate.swift */; };
@@ -33,10 +35,12 @@
 
 /* Begin PBXFileReference section */
 		0F3833461FAD8A57007964B5 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		0F5E23651FB7695F0035F9EA /* RoleRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleRegister.swift; sourceTree = "<group>"; };
+		0F5E23671FB76E0C0035F9EA /* RolesFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolesFunction.swift; sourceTree = "<group>"; };
 		0F8580651FAC06F70033352A /* MessengeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengeTableViewCell.swift; sourceTree = "<group>"; };
 		0F8580691FAD0F000033352A /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		0F85806B1FAD10690033352A /* AWSDynamoDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSDynamoDB.swift; sourceTree = "<group>"; };
-		0F85806D1FAD14DC0033352A /* Messenges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messenges.swift; sourceTree = "<group>"; };
+		0F85806D1FAD14DC0033352A /* RolesTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RolesTable.swift; sourceTree = "<group>"; };
 		0F9DE93F1FA9778D005F4F0F /* AWSS3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSS3.swift; sourceTree = "<group>"; };
 		0F9DE9411FA979C6005F4F0F /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 		17FC2F7C1E258FC500174015 /* CognitoYourUserPoolsSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CognitoYourUserPoolsSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,11 +130,16 @@
 				17FC2F9E1E259F3200174015 /* ConfirmSignUpViewController.swift */,
 				17FC2FA01E25A25900174015 /* ForgotPasswordViewController.swift */,
 				17FC2FA21E25A5D000174015 /* ConfirmForgotPasswordViewController.swift */,
+				0F5E23651FB7695F0035F9EA /* RoleRegister.swift */,
 				0F9DE93F1FA9778D005F4F0F /* AWSS3.swift */,
 				0F3833461FAD8A57007964B5 /* UserData.swift */,
-				0F85806D1FAD14DC0033352A /* Messenges.swift */,
 				0F85806B1FAD10690033352A /* AWSDynamoDB.swift */,
+
+				0F5E23671FB76E0C0035F9EA /* RolesFunction.swift */,
+				0F85806D1FAD14DC0033352A /* RolesTable.swift */,
+
 				6D369BE91FB754900087E6EC /* GiftData.swift */,
+
 			);
 			name = HeavyLifting;
 			sourceTree = "<group>";
@@ -329,6 +338,7 @@
 				0F85806C1FAD10690033352A /* AWSDynamoDB.swift in Sources */,
 				0F3833471FAD8A57007964B5 /* UserData.swift in Sources */,
 				17FC2FA31E25A5D000174015 /* ConfirmForgotPasswordViewController.swift in Sources */,
+				0F5E23661FB7695F0035F9EA /* RoleRegister.swift in Sources */,
 				6D369BE81FB748610087E6EC /* SantaInfoViewController.swift in Sources */,
 				17FC2FA11E25A25900174015 /* ForgotPasswordViewController.swift in Sources */,
 				0F9DE9421FA979C6005F4F0F /* DisplayViewController.swift in Sources */,
@@ -340,7 +350,8 @@
 				17FC2F971E25928900174015 /* MFAViewController.swift in Sources */,
 				6D369BEA1FB754910087E6EC /* GiftData.swift in Sources */,
 				17FC2F801E258FC500174015 /* AppDelegate.swift in Sources */,
-				0F85806E1FAD14DC0033352A /* Messenges.swift in Sources */,
+				0F5E23681FB76E0C0035F9EA /* RolesFunction.swift in Sources */,
+				0F85806E1FAD14DC0033352A /* RolesTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
