@@ -12,25 +12,9 @@ import AWSCognito
 import AWSDynamoDB
 import AWSCognitoIdentityProvider
 
-class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return pastMessages!.count
-    }
+class DisplayViewController: UIViewController {
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "MessengeTableViewCell") as? MessengeTableViewCell{
-            let text = Array(pastMessages!.values)[indexPath.row]
-            let time = Array(pastMessages!.keys)[indexPath.row]
-            cell.updateCell(text: text, time: time)
-            return cell
-        }else{
-            return MessengeTableViewCell()
-        }
-    }
-    
-    @IBOutlet weak var Image: UIImageView!
-    @IBOutlet weak var textInput: UITextField!
-    @IBOutlet weak var MessengeTableView: UITableView!
+
     var user : AWSCognitoIdentityUser?
     var response : AWSCognitoIdentityUserGetDetailsResponse?
     var pool : AWSCognitoIdentityUserPool?
@@ -40,30 +24,30 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func SignOutTapped(_ sender: UIButton){
             self.user?.signOut()
             self.title = nil
-//            performSegue(withIdentifier: "loggedOut", sender: nil)
 }
     
     @IBAction func BtnTapped(_ sender: UIButton) {
-        getFromS3(bucketName: "hamex-storage", fileKey: "horse.jpg") { (url) in
-            if let url = url as? URL{
-                self.Image.image = UIImage(contentsOfFile: url.path)
-            }
-        }
-        
-        read_DDB { (message) in
-            print(message._text!)
-            print("this is read_DDB")
-        }
-        
-        query_DDB { (message) in
-            print(message._text!)
-            print("this is query_DDB")
-        }
+//        getFromS3(bucketName: "hamex-storage", fileKey: "horse.jpg") { (url) in
+//            if let url = url as? URL{
+//                self.Image.image = UIImage(contentsOfFile: url.path)
+//            }
+//        }
+//
+//        read_DDB { (message) in
+//            print(message._text!)
+//            print("this is read_DDB")
+//        }
+//
+//        query_DDB { (message) in
+//            print(message._text!)
+//            print("this is query_DDB")
+//        }
         
     }
     
     @IBAction func SendBtnTapped(_ sender: UIButton){
-        let time = DateFormatter.localizedString(from: .init(), dateStyle: .short, timeStyle: .short)
+        performSegue(withIdentifier: "nextPage", sender: nil)
+//        let time = DateFormatter.localizedString(from: .init(), dateStyle: .short, timeStyle: .short)
         //S3
 //        if let textInput = textInput.text{
 //        dataset?.setString(textInput, forKey:time)
@@ -79,11 +63,11 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
         //DynamoDB
         
         
-        save_DDB(date: "11/4/17, 11:55 PM", text: textInput.text!, userId: "newUserID") {
-            return
-        }
+//        save_DDB(date: "11/4/17, 11:55 PM", text: textInput.text!, userId: "newUserID") {
+//            return
+//        }
     
-        MessengeTableView.reloadData()
+//        MessengeTableView.reloadData()
 }
     
     
@@ -92,8 +76,8 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
     var dataset : AWSCognitoDataset?
     override func viewDidLoad() {
         super.viewDidLoad()
-        MessengeTableView.dataSource = self
-        MessengeTableView.delegate = self
+//        MessengeTableView.dataSource = self
+//        MessengeTableView.delegate = self
         let syncClient = AWSCognito.default()
          dataset = syncClient.openOrCreateDataset("myDataset")
          pastMessages = dataset?.getAll()
