@@ -24,6 +24,7 @@ class DisplayViewController: UIViewController {
     @IBAction func SignOutTapped(_ sender: UIButton){
             self.user?.signOut()
             self.title = nil
+//        self.performSegue(withIdentifier: "loggedOut", sender: nil)
 }
     
     @IBAction func BtnTapped(_ sender: UIButton) {
