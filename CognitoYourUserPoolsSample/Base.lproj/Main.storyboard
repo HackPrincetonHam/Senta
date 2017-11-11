@@ -41,7 +41,6 @@
                                 </state>
                                 <connections>
                                     <action selector="signInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UGV-Ac-v2h"/>
-                                    <segue destination="xUO-qK-z4L" kind="show" identifier="loggedIn" id="4CY-RL-l0i"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXe-qm-Syq">
@@ -102,6 +101,7 @@
                     <connections>
                         <outlet property="password" destination="jtg-5s-y9B" id="NG7-MV-RKZ"/>
                         <outlet property="username" destination="XdH-zS-hci" id="uBd-s7-BUU"/>
+                        <segue destination="xUO-qK-z4L" kind="show" identifier="loggedIn" id="SNk-ku-Nwv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -187,7 +187,6 @@
                                 <state key="normal" title="SignOut"/>
                                 <connections>
                                     <action selector="SignOutTapped:" destination="xUO-qK-z4L" eventType="touchUpInside" id="cl0-em-4e3"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="loggedOut" id="EHc-XM-23U"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VUV-xP-y5p">
@@ -214,7 +213,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="getImage"/>
                                 <connections>
-                                    <action selector="downloadBtnTapped:" destination="xUO-qK-z4L" eventType="touchUpInside" id="IHA-B7-nLb"/>
+                                    <action selector="BtnTapped:" destination="xUO-qK-z4L" eventType="touchUpInside" id="IHA-B7-nLb"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qJp-jP-cTF" customClass="MessengeTableView" customModule="CognitoYourUserPoolsSample" customModuleProvider="target">
@@ -637,7 +636,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4CY-RL-l0i"/>
-        <segue reference="EHc-XM-23U"/>
+        <segue reference="SNk-ku-Nwv"/>
     </inferredMetricsTieBreakers>
 </document>

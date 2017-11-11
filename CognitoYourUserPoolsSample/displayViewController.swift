@@ -40,30 +40,26 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func SignOutTapped(_ sender: UIButton){
             self.user?.signOut()
             self.title = nil
+//            performSegue(withIdentifier: "loggedOut", sender: nil)
 }
     
-    @IBAction func downloadBtnTapped(_ sender: UIButton) {
-        s3download(bucketName: "hamex-storage", fileKey: "horse.jpg") { (url) in
+    @IBAction func BtnTapped(_ sender: UIButton) {
+        getFromS3(bucketName: "hamex-storage", fileKey: "horse.jpg") { (url) in
             if let url = url as? URL{
                 self.Image.image = UIImage(contentsOfFile: url.path)
             }
         }
         
-        DDBRead { (message) in
+        read_DDB { (message) in
             print(message._text!)
             print("this is read_DDB")
         }
         
-        DDBQuery { (message) in
+        query_DDB { (message) in
             print(message._text!)
             print("this is query_DDB")
         }
         
-    }
-    
-    @IBAction func uploadBtnTapped(_ sender: UIButton){
-        let url = URL(fileURLWithPath: <#T##String#>)
-        s3upload(url: url, bucketName: <#T##String#>, fileKey: <#T##String#>)
     }
     
     @IBAction func SendBtnTapped(_ sender: UIButton){
@@ -83,7 +79,7 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
         //DynamoDB
         
         
-        DDBSave(date: "11/5/17, 2:59 AM", text: textInput.text!, userId: "userInfor[]!") {
+        save_DDB(date: "11/4/17, 11:55 PM", text: textInput.text!, userId: "newUserID") {
             return
         }
     
