@@ -11,15 +11,14 @@ import AWSCore
 import AWSDynamoDB
 
 //to update, you need to have the same sort key. Even if you have different partition key, save method would update.
-func save_DDB(date: String, text: String, userId: String, completion: ()->Void){
+func save_DDB(role: String, completion: ()->Void){
     
 let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
-let MessengeItem : Messenges = Messenges()
-MessengeItem._userId = UserInfor["sub"]!
-MessengeItem._date = date
-MessengeItem._text = text
+let roleItem : Roles = Roles()
+roleItem._userId = UserInfor["sub"]!
+roleItem._role = role
     
-    dynamoDBObjectMapper.save(MessengeItem) { (error) in
+    dynamoDBObjectMapper.save(roleItem) { (error) in
         if error != nil{
             print(error!)
             return
@@ -31,22 +30,22 @@ MessengeItem._text = text
 }
 
 
-func read_DDB( completion:@escaping (Messenges)->Void){
+func read_DDB( completion:@escaping (Roles)->Void){
     let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
     
-    dynamoDBObjectMapper.load(Messenges.self, hashKey: UserInfor["sub"]!, rangeKey: "11/4/17, 11:55 PM") { (item, Error) in
+    dynamoDBObjectMapper.load(Roles.self, hashKey: UserInfor["sub"]!, rangeKey: "11/4/17, 11:55 PM") { (item, Error) in
         if Error != nil{
             print(Error!)
         }else{
-        if let messageItem = item as? Messenges{
-        completion(messageItem)
+        if let roleItem = item as? Roles{
+        completion(roleItem)
             }
         }
     }
 }
 
 //query is for viewing multiple items.
-func query_DDB(completion:@escaping (Messenges)->Void){
+func query_DDB(completion:@escaping (Roles)->Void){
     
     // 1) Configure the query
     
@@ -77,13 +76,13 @@ func query_DDB(completion:@escaping (Messenges)->Void){
     
     let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
     
-    dynamoDbObjectMapper.query(Messenges.self, expression: queryExpression) { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
+    dynamoDbObjectMapper.query(Roles.self, expression: queryExpression) { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
         if error != nil {
             print("The request failed. Error: \(String(describing: error))")
         }
         if output != nil {
             for news in output!.items {
-                let newsItem = news as? Messenges
+                let newsItem = news as? Roles
                 completion(newsItem!)
             }
         }
