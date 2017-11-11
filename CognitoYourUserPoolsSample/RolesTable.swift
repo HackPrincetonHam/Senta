@@ -3,14 +3,13 @@ import Foundation
 import UIKit
 import AWSDynamoDB
 
-class Messenges: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
+class Roles: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var _userId: String?
-    var _date: String?
-    var _text: String?
-    static var _tableName: String = "Message"
-    static var _hashKeyAttribute: String = "otherID"
-    static var _rangeKeyAttribute: String = "date"
+    var _role: String?
+    static var _tableName: String = "RoleTable"
+    static var _hashKeyAttribute: String = "user_sub"
+    static var _rangeKeyAttribute: String = "role"
     
     
     
@@ -31,9 +30,8 @@ class Messenges: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     override class func jsonKeyPathsByPropertyKey() -> [AnyHashable: Any] {
         return [
-                "_date" : _rangeKeyAttribute,
+                "_role" : _rangeKeyAttribute,
                "_userId" : _hashKeyAttribute,
-               "_text" : "text",
         ]
     }
 }
