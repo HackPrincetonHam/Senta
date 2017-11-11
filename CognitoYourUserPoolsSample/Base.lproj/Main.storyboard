@@ -294,6 +294,7 @@
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submitInfo:" destination="gAr-xA-y6E" eventType="touchUpInside" id="L6a-dy-1HV"/>
+                                    <segue destination="xUO-qK-z4L" kind="show" id="0nD-rT-bYB"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What do you dislike?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUY-QD-mlH">
