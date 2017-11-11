@@ -11,14 +11,13 @@ import AWSCore
 import AWSDynamoDB
 
 //to update, you need to have the same sort key. Even if you have different partition key, save method would update.
-func save_DDB(role: String, completion: ()->Void){
+func save_DDB(role: String, completion: @escaping ()->Void){
     
 
-let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
-let roleItem : Roles = Roles()
-roleItem._userId = UserInfor["sub"]!
-roleItem._role = rolet
-
+    let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+    let roleItem : Roles = Roles()
+    roleItem._userId = UserInfor["sub"]!
+    roleItem._role = role
     
     dynamoDBObjectMapper.save(roleItem) { (error) in
         if error != nil{
@@ -26,6 +25,7 @@ roleItem._role = rolet
             return
         }else{
             print("SAVED!")
+            completion()
         }
     }
     

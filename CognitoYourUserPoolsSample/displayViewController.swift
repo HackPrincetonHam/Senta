@@ -47,7 +47,7 @@ class DisplayViewController: UIViewController {
     }
     
     @IBAction func SendBtnTapped(_ sender: UIButton){
-        performSegue(withIdentifier: "nextPage", sender: nil)
+        performSegue(withIdentifier: "roleSelectionSegue", sender: nil)
 //        let time = DateFormatter.localizedString(from: .init(), dateStyle: .short, timeStyle: .short)
         //S3
 //        if let textInput = textInput.text{

@@ -203,16 +203,13 @@
                                 <state key="normal" title="setRole"/>
                                 <connections>
                                     <action selector="BtnTapped:" destination="xUO-qK-z4L" eventType="touchUpInside" id="IHA-B7-nLb"/>
-                                    <segue destination="RDd-3n-bbA" kind="show" id="D8h-cg-gju"/>
+                                    <segue destination="RDd-3n-bbA" kind="push" identifier="roleSelectionSegue" id="D8h-cg-gju"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="mM4-Hs-19c"/>
-                    <connections>
-                        <segue destination="gAr-xA-y6E" kind="show" identifier="nextPage" id="6Tl-OI-ra9"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wXU-VP-ePT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -237,14 +234,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTU-3W-Yy1">
-                                <rect key="frame" x="16" y="11" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="xUO-qK-z4L" kind="show" id="53F-LO-xdz"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Candy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XB3-AF-RWO">
                                 <rect key="frame" x="27" y="111" width="296" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -295,7 +284,6 @@
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submitInfo:" destination="gAr-xA-y6E" eventType="touchUpInside" id="L6a-dy-1HV"/>
-                                    <segue destination="xUO-qK-z4L" kind="show" id="0nD-rT-bYB"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What do you dislike?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUY-QD-mlH">
@@ -323,9 +311,18 @@
                                     <action selector="sliderValueChanged:" destination="gAr-xA-y6E" eventType="valueChanged" id="rTQ-df-jGS"/>
                                 </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTU-3W-Yy1">
+                                <rect key="frame" x="27" y="34" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="RDd-3n-bbA" kind="show" id="l7J-jx-tMi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="tLS-it-DXR"/>
                     <connections>
                         <outlet property="input1" destination="XB3-AF-RWO" id="PhE-Lv-jWX"/>
                         <outlet property="input2" destination="f8u-yd-dSJ" id="266-Ld-j7S"/>
@@ -625,6 +622,7 @@
                                 <state key="normal" title="Senta"/>
                                 <connections>
                                     <action selector="chooseRole:" destination="RDd-3n-bbA" eventType="touchUpInside" id="q4L-ST-wbk"/>
+                                    <segue destination="gAr-xA-y6E" kind="show" identifier="" id="aiy-rs-1SO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vly-DH-cxf">
@@ -638,10 +636,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <navigationItem key="navigationItem" id="e5S-mL-Uho"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GlW-c8-qoT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1039.2" y="1764.4677661169417"/>
+            <point key="canvasLocation" x="-1041" y="1762"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aJU-rz-AOc">
@@ -765,6 +764,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="53F-LO-xdz"/>
+        <segue reference="l7J-jx-tMi"/>
+        <segue reference="AMW-Ki-wyT"/>
     </inferredMetricsTieBreakers>
 </document>

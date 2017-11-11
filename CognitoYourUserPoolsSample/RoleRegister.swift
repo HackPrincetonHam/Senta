@@ -12,9 +12,10 @@ class RoleRegisterViewController:UIViewController  {
     
     @IBAction func chooseRole(_ sender: UIButton){
         save_DDB(role: sender.currentTitle!) {
-            return
+          
         }
         
+
     }
     
 }
