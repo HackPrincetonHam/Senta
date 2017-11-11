@@ -53,6 +53,29 @@ func save_gift_DDB(likes: Array<String>, dislikes: Array<String>, price_range: S
     completion()
 }
 
+func save_reindeer_DDB(drop_date: String, drop_location: String, drop_time_range: String, identity: String, completion: ()->Void) {
+    
+    let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+    let ReindeerDataItem : ReindeerData = ReindeerData()
+    
+    ReindeerDataItem._userId = UserInfor["sub"]!
+    ReindeerDataItem._drop_date = drop_date
+    ReindeerDataItem._drop_location = drop_location
+    ReindeerDataItem._drop_time_range = drop_time_range
+    ReindeerDataItem._identity = identity
+    
+    dynamoDBObjectMapper.save(ReindeerDataItem) { (error) in
+        
+        if error != nil {
+            print(error!)
+            return
+        } else {
+            print("SAVED!")
+        }
+    }
+    completion()
+}
+
 
 func read_DDB( completion:@escaping (Roles)->Void){
     let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
