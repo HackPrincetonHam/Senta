@@ -251,6 +251,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esT-1s-INn">
+                                <rect key="frame" x="316" y="599" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Senta"/>
+                                <connections>
+                                    <segue destination="gAr-xA-y6E" kind="show" id="Yxw-ac-xLz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -264,6 +272,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wXU-VP-ePT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1386.4000000000001" y="938.68065967016503"/>
+        </scene>
+        <!--Santa Info View Controller-->
+        <scene sceneID="PJh-Kb-kw0">
+            <objects>
+                <viewController id="gAr-xA-y6E" customClass="SantaInfoViewController" customModule="CognitoYourUserPoolsSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eq5-ej-ipT"/>
+                        <viewControllerLayoutGuide type="bottom" id="SgJ-OX-gGn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R3f-8k-UG9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvd-pc-6Oc">
+                                <rect key="frame" x="137" y="101" width="39" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ev2-uM-W5O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-508" y="939"/>
         </scene>
         <!--SignUp-->
         <scene sceneID="be2-Yb-YLI">
