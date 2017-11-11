@@ -13,11 +13,11 @@ import AWSDynamoDB
 //to update, you need to have the same sort key. Even if you have different partition key, save method would update.
 func save_DDB(date: String, text: String, userId: String, completion: ()->Void){
     
-let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
-let MessengeItem : Messenges = Messenges()
-MessengeItem._userId = UserInfor["sub"]!
-MessengeItem._date = date
-MessengeItem._text = text
+    let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+    let MessengeItem : Messenges = Messenges()
+    MessengeItem._userId = UserInfor["sub"]!
+    MessengeItem._date = date
+    MessengeItem._text = text
     
     dynamoDBObjectMapper.save(MessengeItem) { (error) in
         if error != nil{
@@ -28,6 +28,27 @@ MessengeItem._text = text
         }
     }
     
+}
+
+func save_gift_DDB(likes: Array<String>, dislikes: Array<String>, completion: ()->Void) {
+    
+    let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+    let GiftDataItem : GiftData = GiftData()
+    
+    GiftDataItem._userId = UserInfor["sub"]
+    GiftDataItem._likes = likes
+    GiftDataItem._dislikes = dislikes
+    
+    dynamoDBObjectMapper.save(GiftDataItem) { (error) in
+        
+        if error != nil {
+            print(error!)
+            return
+        } else {
+            print("SAVED!")
+        }
+    }
+    completion()
 }
 
 
