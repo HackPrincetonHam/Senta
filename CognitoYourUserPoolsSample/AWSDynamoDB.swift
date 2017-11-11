@@ -30,14 +30,15 @@ func save_DDB(date: String, text: String, userId: String, completion: ()->Void){
     
 }
 
-func save_gift_DDB(likes: Array<String>, dislikes: Array<String>, completion: ()->Void) {
+func save_gift_DDB(likes: Array<String>, dislikes: Array<String>, price_range: String, completion: ()->Void) {
     
     let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
     let GiftDataItem : GiftData = GiftData()
     
-    GiftDataItem._userId = UserInfor["sub"]
+    GiftDataItem._userId = UserInfor["sub"]!
     GiftDataItem._likes = likes
     GiftDataItem._dislikes = dislikes
+    GiftDataItem._price_range = price_range
     
     dynamoDBObjectMapper.save(GiftDataItem) { (error) in
         
